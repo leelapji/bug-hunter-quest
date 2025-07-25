@@ -112,13 +112,15 @@ export const BugHunterGame = () => {
           </div>
         )}
 
-        <CompletionModal
-          isOpen={showCompletionModal}
-          onClose={handleBackToMenu}
-          challenge={currentChallenge!}
-          onNextChallenge={handleNextChallenge}
-          isLastChallenge={isLastChallenge}
-        />
+        {currentChallenge && (
+          <CompletionModal
+            isOpen={showCompletionModal}
+            onClose={handleBackToMenu}
+            challenge={currentChallenge}
+            onNextChallenge={handleNextChallenge}
+            isLastChallenge={isLastChallenge}
+          />
+        )}
       </div>
     </div>
   );
